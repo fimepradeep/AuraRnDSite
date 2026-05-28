@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-cyan: #4f46e5;
+  --color-brand-blue: #3b82f6;
+  --color-brand-dark: #f8fafc;
+  --color-brand-card: #ffffff;
+  --color-brand-card-hover: #f1f5f9;
+}
+
+/* Custom visual scrollbar for light theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Tech Grid Pattern background for light theme */
+.tech-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+
+/* Subtle pulse glow for active nodes with premium brand glow */
+@keyframes neon-pulse {
+  0%, 100% {
+    box-shadow: 0 0 4px rgba(79, 70, 229, 0.1), inset 0 0 4px rgba(79, 70, 229, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(79, 70, 229, 0.3), inset 0 0 8px rgba(79, 70, 229, 0.15);
+  }
+}
+
+.glow-active {
+  animation: neon-pulse 2s infinite;
+}
+
+/* Packet stream line animation */
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.stroke-animated {
+  stroke-dasharray: 8, 4;
+  animation: flow-dash 1.5s linear infinite;
+}
+
+/* ==========================================
+   SOLID HIGH-CONTRAST LIGHT THEME REFINEMENTS
+   ========================================== */
+#aura-app {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Text Element Color Maps */
+#aura-app .text-white {
+  color: #0f172a !important;
+}
+#aura-app .text-slate-100 {
+  color: #0f172a !important;
+}
+#aura-app .text-slate-300 {
+  color: #334155 !important;
+}
+#aura-app .text-slate-400 {
+  color: #475569 !important;
+}
+#aura-app .text-slate-500 {
+  color: #64748b !important;
+}
+#aura-app .text-indigo-300 {
+  color: #4f46e5 !important;
+}
+#aura-app .text-indigo-400 {
+  color: #4338ca !important;
+}
+
+/* Section Header Badges */
+#aura-app .bg-indigo-950\/30 {
+  background-color: rgba(79, 70, 229, 0.08) !important;
+  color: #4f46e5 !important;
+}
+
+/* Clean White Container Cards */
+#aura-app .bg-brand-dark {
+  background-color: #f8fafc !important;
+}
+#aura-app .bg-brand-card\/30,
+#aura-app .bg-brand-card\/20,
+#aura-app .bg-brand-card\/25 {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05) !important;
+}
+
+#aura-app .bg-white\/\[0\.01\] {
+  background-color: #f8fafc !important;
+}
+#aura-app .bg-white\/\[0\.02\] {
+  background-color: #f1f5f9 !important;
+}
+#aura-app .bg-white\/\[0\.03\] {
+  background-color: #e2e8f0 !important;
+}
+#aura-app .bg-white\/5 {
+  background-color: #f1f5f9 !important;
+}
+#aura-app .bg-white\/10 {
+  background-color: #e2e8f0 !important;
+}
+#aura-app .bg-brand-cyan\/5 {
+  background-color: rgba(79, 70, 229, 0.05) !important;
+}
+#aura-app .bg-brand-cyan\/10 {
+  background-color: rgba(79, 70, 229, 0.08) !important;
+}
+#aura-app .bg-brand-cyan\/20 {
+  background-color: rgba(79, 70, 229, 0.12) !important;
+}
+#aura-app .bg-purple-500\/10 {
+  background-color: rgba(147, 51, 234, 0.06) !important;
+}
+
+/* System Node canvas overrides */
+#canvas-wrapper-outer {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+#aura-app .border-white\/5,
+#aura-app .border-white\/10 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Interactive Form inputs styles */
+#aura-app input,
+#aura-app select,
+#aura-app textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+#aura-app input:focus,
+#aura-app select:focus,
+#aura-app textarea:focus {
+  border-color: #4f46e5 !important;
+}
+
+/* Terminal Screen Overrides */
+#term-screen {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #334155 !important;
+}
+#term-screen .text-green-400 {
+  color: #16a34a !important;
+}
+#term-screen .text-sky-400 {
+  color: #2563eb !important;
+}
+#term-screen .text-indigo-400 {
+  color: #4f46e5 !important;
+}
+#term-screen .text-brand-cyan {
+  color: #4f46e5 !important;
+}
+#term-screen .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Navigation specific styling */
+#aura-app nav {
+  background-color: rgba(248, 250, 252, 0.8) !important;
+  backdrop-filter: blur(8px) !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+#aura-app nav .text-slate-400 {
+  color: #475569 !important;
+}
+#aura-app nav .text-slate-400:hover {
+  color: #0f172a !important;
+}
+#nav-routes {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Custom button states override */
+#aura-app .text-brand-dark {
+  color: #ffffff !important;
+}
+#aura-app .bg-brand-cyan {
+  background-color: #4f46e5 !important;
+}
+#aura-app .bg-brand-cyan:hover {
+  background-color: #4338ca !important;
+}
+#aura-app .text-brand-cyan {
+  color: #4f46e5 !important;
+}
+#cta-quick-verify {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+#cta-quick-verify:hover {
+  background-color: #f1f5f9 !important;
+}
+#btn-hero-publications {
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  background-color: #ffffff !important;
+}
+#btn-hero-publications:hover {
+  background-color: #f1f5f9 !important;
+}
+#btn-open-paper-art-play-store-compliance,
+#btn-open-paper-art-jetpack-fps,
+#btn-open-paper-art-distributed-ledgers {
+  color: #4f46e5 !important;
+}
+#compliance-scroll-list .bg-brand-cyan\/\[0\.02\] {
+  background-color: rgba(79, 70, 229, 0.04) !important;
+}
+#status-mock-badge {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
+}
+#submit-add-node, #submit-ticket, #btn-run-compile, #btn-hero-playground {
+  color: #ffffff !important;
+}
+#selected-node-panel {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+
+.glow-active {
+  animation: neon-pulse 2s infinite;
+}
+
+/* Packet stream line animation */
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.stroke-animated {
+  stroke-dasharray: 8, 4;
+  animation: flow-dash 1.5s linear infinite;
+}
